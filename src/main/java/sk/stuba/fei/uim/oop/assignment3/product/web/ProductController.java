@@ -21,7 +21,7 @@ public class ProductController {
 
     @GetMapping
     public List<ProductResponse> getAll() {
-        return this.productService.getAllProducts().stream().map(product -> new ProductResponse(product)).collect(Collectors.toList());
+        return this.productService.getAllProducts().stream().map(ProductResponse::new).collect(Collectors.toList());
     }
 
     @PostMapping
