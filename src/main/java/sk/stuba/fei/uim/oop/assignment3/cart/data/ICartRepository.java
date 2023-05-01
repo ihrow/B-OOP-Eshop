@@ -2,6 +2,8 @@ package sk.stuba.fei.uim.oop.assignment3.cart.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ICartRepository extends JpaRepository<Cart, Long> {
+import java.util.List;
 
+public interface ICartRepository extends JpaRepository<Cart, Long> {
+    List<Cart> findAll();
 }
