@@ -19,7 +19,7 @@ public class CartController {
     // ============================
     @GetMapping
     public ResponseEntity<List<CartResponse>> getAllCarts() {
-        return new ResponseEntity<>(this.cartService.getAllCarts().stream().map(CartResponse::new).collect(Collectors.toList()), HttpStatus.OK);
+        return new ResponseEntity<>(this.cartService.getAllCarts().stream().map(cart -> new CartResponse(cart)).collect(Collectors.toList()), HttpStatus.OK);
     }
     // ============================
 

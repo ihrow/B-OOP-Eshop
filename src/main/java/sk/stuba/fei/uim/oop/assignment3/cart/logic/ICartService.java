@@ -1,6 +1,5 @@
 package sk.stuba.fei.uim.oop.assignment3.cart.logic;
 
-import org.springframework.http.HttpStatus;
 import sk.stuba.fei.uim.oop.assignment3.cart.data.Cart;
 
 import java.util.List;
