@@ -10,4 +10,8 @@ public class ExceptionController {
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public void handleNotFoundException() {}
+
+    @ExceptionHandler(IllegalOperationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public void handleIllegalOperationException() {}
 }

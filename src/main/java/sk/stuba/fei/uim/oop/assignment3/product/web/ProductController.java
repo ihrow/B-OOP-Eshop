@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sk.stuba.fei.uim.oop.assignment3.exception.NotFoundException;
 import sk.stuba.fei.uim.oop.assignment3.product.logic.ProductService;
-import sk.stuba.fei.uim.oop.assignment3.product.web.bodies.AmountResponse;
+import sk.stuba.fei.uim.oop.assignment3.product.web.bodies.Amount;
 import sk.stuba.fei.uim.oop.assignment3.product.web.bodies.ProductRequest;
 import sk.stuba.fei.uim.oop.assignment3.product.web.bodies.ProductResponse;
 
@@ -45,12 +45,12 @@ public class ProductController {
     }
 
     @GetMapping("/{id}/amount")
-    public AmountResponse getAmount(@PathVariable Long id) throws NotFoundException {
-        return new AmountResponse(this.productService.getProductAmount(id));
+    public Amount getAmount(@PathVariable Long id) throws NotFoundException {
+        return new Amount(this.productService.getProductAmount(id));
     }
 
     @PostMapping("/{id}/amount")
-    public AmountResponse addAmount(@PathVariable Long id, @RequestBody AmountResponse amountResponse) throws NotFoundException {
-        return new AmountResponse(this.productService.addProductAmount(id, amountResponse.getAmount()));
+    public Amount addAmount(@PathVariable Long id, @RequestBody Amount body) throws NotFoundException {
+        return new Amount(this.productService.addProductAmount(id, body.getAmount()));
     }
 }
