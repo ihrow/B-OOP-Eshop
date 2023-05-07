@@ -23,9 +23,7 @@ public class CartEntry {
     private int amount;
 
     public CartEntry(CartEntryRequest request) {
-        System.out.println("CartEntry constructor");
         this.productId = request.getProductId();
-        System.out.println("CartEntry constructor productId: " + this.productId);
         this.amount = request.getAmount();
     }
 }
